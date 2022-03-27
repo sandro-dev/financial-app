@@ -1,6 +1,10 @@
+import { useTransactions } from "../../hooks/useTransactions"
 import { Container, Content } from "./style"
 
 export const TransactionsTable: React.FC = () => {
+
+  const { transactionsData } = useTransactions();
+
   return (
     <Container>
       <Content>
@@ -14,30 +18,26 @@ export const TransactionsTable: React.FC = () => {
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>Desenvolvimento de site</td>
-            <td className="credit">R$18000</td>
-            <td>Venda</td>
-            <td>20/02/2022</td>
-          </tr>
-          <tr>
-            <td>Aluguel do AP</td>
-            <td className="debit">- R$1200</td>
-            <td>Despesa</td>
-            <td>21/02/2022</td>
-          </tr>
-          <tr>
-            <td>Barca de Sushi</td>
-            <td className="debit">- R$200</td>
-            <td>Comida</td>
-            <td>22/02/2022</td>
-          </tr>
-          <tr>
-            <td>iPhone 11</td>
-            <td className="credit">R$3000</td>
-            <td>Venda</td>
-            <td>23/02/2022</td>
-          </tr>
+          {
+            transactionsData.map(transaction => (
+              <tr key={transaction.id}>
+                <td>{transaction.name}</td>
+                <td className={transaction.type}>
+                  { 
+                    new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL'}).format(transaction.price)
+                  }
+                  </td>
+                <td>{transaction.category}</td>
+                <td>
+                  {
+                    new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short'}).format(transaction.date)
+                  }
+                </td>
+              </tr>
+            ))
+          }
+          
+
         </tbody>
       </table>
       </Content>
