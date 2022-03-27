@@ -1,23 +1,24 @@
 import styled from "styled-components";
 
-export const Container = styled.section`
+export const Container = styled.div`
+  display: flex;
   margin-top: -4rem;
 `;
 
 export const Content = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  grid-column-gap: 1rem;
-  
-  max-width: 1120px;
+  grid-column-gap: 2rem;
+
+  width: 70rem;
   margin: 0 auto;
+
 `;
 
 export const Box = styled.div`
-  padding: 2rem 4rem;
+  padding: 2rem;
   background: var(--white);
   border-radius: 0.25rem;
-
   
   header {
     display: flex;
@@ -25,7 +26,7 @@ export const Box = styled.div`
   }
   
   strong {
-    display: flex;
+    display: block;
     font-size: 2rem;
     font-weight: 500;
     line-height: 2rem;
