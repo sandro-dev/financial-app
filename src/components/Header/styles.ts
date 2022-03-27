@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { darken, lighten } from 'polished';
 
 export const Container = styled.header`
   display: flex;
@@ -7,16 +6,16 @@ export const Container = styled.header`
 `;
 
 export const Content = styled.div`
-  width: 1120px;
-  margin: 0rem auto;
-  padding: 2rem 1rem 10rem 1rem;
-
   display: flex;
   align-items: center;
   justify-content: space-between;
 
+  width: 1120px;
+  margin: 0rem auto;
+  padding: 2rem 1rem 10rem 1rem;
+
   img {
-    width: 10rem;
+    width: 11rem;
   }
 `;
 

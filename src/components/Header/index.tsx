@@ -1,6 +1,6 @@
 import { Button, Container, Content } from "./styles"
 
-import logoImg from '../../assets/logo.svg'
+import logoImg from '../../assets/logo-financialapp.svg'
 
 export const Header: React.FC = () => {
   return (
